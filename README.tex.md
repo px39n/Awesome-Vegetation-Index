@@ -1,20 +1,16 @@
 # Awesome Vegetation Index [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re)
-List of dissertations, application, software related to Vegetation Indices.
+List of reference, applications of common Vegetation Indices for Multi-spectral, hyper-spectral and UAV images. (**contribution are welcome**)
 <img src="https://flurosat.com/wp-content/uploads/2018/10/growth-monitoring-e1583902228867.png)" alt="drawing" width="600"/>
 
 ## Table of Contents
 
 <!-- Start TOC (do not remove me) -->
-- [Literature Reviews](#literature-reviews)
-- [Vegetation Index for Broadband](#vegetation-index)
-  - [Broadband Greenness and Cover](#roadband-greenness-and-cover)
-  - [UAV Greenness](#uav-greenness)
-  - [Light Use Efficiency](#llight-use-efficiency)
-  - [Canopy Nitrogen](#canopy-nitrogen)
-  - [Dry or Senescent Carbon](#dry-or-senescent-carbon)
-  - [Leaf Pigments](#leaf-pigments)
-  - [Canopy Water Content](#canopy-water-content)
+- [Literature Reviews](#literature-reviews-for-vi)
+- [Multispectral Vegetation Index](#multispectral-vegetation-index)
+  - [Broadband Greenness and Cover](#greenness-and-cover)
+  - [Other applications for Broadband  images](#other-applications-for-broadband-images)
 - [Hyperspectral Vegetation Index](#hyperspectral-egetation-Index)
+- [Vegetation Index for UAV images ](#vegetation-index-for-uav-images  )
 - [Community](#community)
   - [Learning Materials](#learning-materials)
 - [Software](#Software)
@@ -24,19 +20,16 @@ List of dissertations, application, software related to Vegetation Indices.
 <!-- End TOC (do not remove me) -->
 
 <!-- Start Links (do not remove me) -->
-## Literature Reviews
+## Literature Reviews for VI
 1. Significant Remote Sensing Vegetation Indices: A Review of Developments and Applications ([li et al. 2017](https://www.hindawi.com/journals/js/2017/1353691/))
 2. Research on Vegetation Information Extraction from Visible UAV Remote Sensing Images ([yuan et al. 2018](https://ieeexplore.ieee.org/document/8598637))
 3. Hyperspectral vegetation indices and their relationships with agricultural crop characteristics([Thenkabail et al.2000](http://apps.webofknowledge.com/full_record.do?product=UA&search_mode=GeneralSearch&qid=8&SID=5AYEOj1lDfu8CskvSSI&page=2&doc=17))
 4. Evaluating Multispectral Images and Vegetation Indices for Precision Farming Applications from UAV Images ([Candiago et al. 2015](https://www.mdpi.com/2072-4292/7/4/4026))
 
-## Vegetation Index
+## Multispectral Vegetation Index
 
-### Broadband  Greenness and Cover
+### Greenness and Cover
 Broadband greenness measures the health of vegetation leaf area index (LAI) and canopy chlorophyll density (CCD) vegetation cover, LAI, biomass, growth, and vigor assessment. It is worthy noting that the selection of proper wavebands in hyperspectral data could partly compensate the limitations of some VI formulas.[(Zhao et al.2007)](https://www.sciencedirect.com/science/article/abs/pii/S0924271607000056)
-
-*Table1. Common Greenness Indices for Broadband*
-
 Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
 ---|---|---|---|---|---
 Normalized Difference Vegetation Index | NDVI |$\frac{R_{\mathrm{NIR}}-R_{\mathrm{Red}}}{R_{\mathrm{NIR}}+R_{\mathrm{Red}}}$|Pigment, Canopy | | [paper](https://scholar.google.com/scholar_lookup?title=Monitoring%20vegetation%20systems%20in%20the%20great%20plains%20with%20erts&author=J.%20W.%20Rouse%20Jr.&author=R.%20Haas&author=J.%20Schell&author=&author=D.%20Deering&publication_year=1974))
@@ -69,54 +62,20 @@ L': A formula need to be added
 n: Atmospheric Regulation Factor(C =6、C =7．5)
 y: Atmospheric radiation correction coefficient*
 
-### UAV Greenness
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
+
+### Other Applications for Broadband Images
+Name| Abbrev. | Formula | Satellite Example | Sensitivity | Reference
 ---|---|---|---|---|---
-Normalized Difference Vegetation Index | NDVI |$\frac{R_{\mathrm{NIR}}-R_{\mathrm{Red}}}{R_{\mathrm{NIR}}+R_{\mathrm{Red}}}$|Pigment, Canopy | | [paper](https://scholar.google.com/scholar_lookup?title=Monitoring%20vegetation%20systems%20in%20the%20great%20plains%20with%20erts&author=J.%20W.%20Rouse%20Jr.&author=R.%20Haas&author=J.%20Schell&author=&author=D.%20Deering&publication_year=1974))
-Visible-band difference vegetation index |VDVI| $\frac{\left(2 * \rho_{\text {green }}-\rho_{\text {red }}-\rho_{\text {blue }}\right)}{\left(2 * \rho_{\text {green }}+\rho_{\text {red }}+\rho_{\text {blue }}\right)}$
-Normalized green-blue difference index | NGBDI |
-Normalized green-red difference index | NGRDI
-Red-green ratio index |RGRI
-Blue Green ratio index| BGRI
-Excess green|EXG
-Excess red | EXR
-excess green minus excess red|EXGR
-color index of vegetation extraction|CIVE
-Red green blue vegetation index | RGBVI
+Photochemical Reflectance Index|PRI | $\frac{R_{528} – R_{567}}{R_{528} + R_{567}}$ |  WorldView-2 | Light Use
+Structure Insensitive Pigment Index|SIPI | $\frac{R_{445} – R_{800}}{R_{670} – R_{800}}$ |ALI | Light Use
+Normalized Difference Nitrogen Index | NDNI | $\frac{log ( R_{1510} )^-1 -log ( R_{1680} )^-1}{log ( R_{1510} )^-1 +log ( R_{1680} )^-1}$ | SCIAMACHY| Nitrogen
+Plant Senescence Reflectance Index|PSRI | $\frac{678 \mathrm{nm}-500 \mathrm{nm}}{750 \mathrm{nm}}$ | LandsatMSS | Dry or Senescent Carbon
+Carotenoid Reflectance Index 1|CRI1 | $[510]^{(-1)}-[550]^{(-1)}$ | LandsatTM |Carotenoid 
+Anthocyanin Reflectance Index 1|ARI1,ARI2 | $\frac{1}{550 \mathrm{nm}}-\frac{1}{700 \mathrm{nm}}$ | LandsatMSS| Anthocyanin 
+Normalized Difference Water Index|NDWI |$\frac{R_{860} – R_{1240}}{R_{860} + R_{1240}}$    | MIPAS | Water 
+Moisture Stress Index|MSI |$\frac{R_{1600}}{R_{820}}$     | LandsatTM|Water 
+Normalized Difference Infrared Index|NDII | $\frac{850 n m-1650 n m}{850 n m+1650 n m}$ | ALI|Water 
 
-
-### Light Use Efficiency (Disease detection)
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
----|---|---|---|---|---
-Photochemical Reflectance Index|PRI
-Structure Insensitive Pigment Index|SIPI
-
-###  Canopy Nitrogen
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
----|---|---|---|---|---
-Normalized Difference Nitrogen Index | NDNI
-
-###  Dry or Senescent Carbon
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
----|---|---|---|---|---
-Normalized Difference Lignin Index|NDLI
-Plant Senescence Reflectance Index|PSRI
-
-###  Leaf Pigments
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
----|---|---|---|---|---
-Carotenoid Reflectance Index 1|CRI1
-Anthocyanin Reflectance Index 1|ARI1
-Anthocyanin Reflectance Index 2|ARI2
-
-
-###  Canopy Water Content
-Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
----|---|---|---|---|---
-Water Band Index|WBI
-Normalized Difference Water Index|NDWI
-Moisture Stress Index|MSI
-Normalized Difference Infrared Index|NDII
 
 
 
@@ -167,6 +126,23 @@ The overall amount and quality of photosynthetic material in vegetation.
 | Normalized Difference Water Index                       | NDWI                | $\frac{R_{860} – R_{1240}}{R_{860} + R_{1240}}$                                                                                                                                                               | Water Content         | Gao (1996)                         |
 | Plant Water Index                                       | PWI                 | $\frac{R_{970}}{R_{900}}$                                                                                                                                                                                     | Water Content         | Penuelas et al. (1997)             |
 | Simple Ratio Water Index                                | SRWI                | $\frac{R_{858}}{R_{1240}}$                                                                                                                                                                                    | Water Content         | Zarco-Tejada et al. (2003)         |
+
+## Vegetation Index for UAV images 
+With specific camera, UAV images can be used to calculate all kind of hyperspectral and multi-band vegetation index, where RGB only images can be used to calculate following indices.
+Name| Abbrev. | Formula | Atmospheric Effects Parameters | Soil Adjustment Parameters| Reference
+---|---|---|---|---|---
+Normalized Difference Vegetation Index | NDVI |$\frac{R_{\mathrm{NIR}}-R_{\mathrm{Red}}}{R_{\mathrm{NIR}}+R_{\mathrm{Red}}}$|Pigment, Canopy | | [paper](https://scholar.google.com/scholar_lookup?title=Monitoring%20vegetation%20systems%20in%20the%20great%20plains%20with%20erts&author=J.%20W.%20Rouse%20Jr.&author=R.%20Haas&author=J.%20Schell&author=&author=D.%20Deering&publication_year=1974))
+Visible-band difference vegetation index |VDVI| $\frac{\left(2 * \rho_{\text {green }}-\rho_{\text {red }}-\rho_{\text {blue }}\right)}{\left(2 * \rho_{\text {green }}+\rho_{\text {red }}+\rho_{\text {blue }}\right)}$
+Normalized green-blue difference index | NGBDI |
+Normalized green-red difference index | NGRDI
+Red-green ratio index |RGRI
+Blue Green ratio index| BGRI
+Excess green|EXG
+Excess red | EXR
+excess green minus excess red|EXGR
+color index of vegetation extraction|CIVE
+Red green blue vegetation index | RGBVI
+
 ## Community
 
 ### Learning Materials
@@ -178,21 +154,22 @@ The overall amount and quality of photosynthetic material in vegetation.
 ## Software programs
 There are currently a large number of software with Vegetation Index tools, and we have a brief summary of them, 
 ### Commercial
-|Name|Description|
-|--|--|
-| ERDAS IMAGINE |  |
-| ArcGIS |  |
-| ENVI |  |
-| Idrisi|  |
+|Name|Description| Customed Calculation | Pre definition Indices | Pre definition Satellite |
+|--|--|--|--|--|
+| ERDAS IMAGINE | |√ | |
+| ArcGIS | 15 Image indices are computed from multiband images  |√| 15|
+| ENVI | ENVI exposes 27 of these indices which were selected based upon their robustness, scientific basis, and applicability. |√|27|
+| Idrisi| A full suite of mathematical and relational modeling tools for deriving new data layers as a function of existing layers. |√ | |
+|Pix4Dfields| Dedicated software for agriculture | √|
 ### Open Source
-|Name|Description|
-|--|--|
-| QGIS |  |
+|Name|Description| Customed Calculation | Pre definition Indices | Pre definition Satellite |
+|--|--|--|--|--|
+| QGIS | |√ | |
 
 
 <!-- End Links (do not remove me) -->
 
  ## Note
 
-This list will be updated in time, and volunteer contributions are welcome. For questions or sharing, please feel free to  [contact us](mailto:007zhangmin@whu.edu.cn)  or make issues.
+This list will be updated in time, and volunteer contributions are welcome. For questions or sharing, please feel free to  [contact us](isxzl39@gmail.com)  or make issues.
 
