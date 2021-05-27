@@ -76,7 +76,7 @@ Anthocyanin Reflectance Index 1|ARI1,ARI2 | $\frac{1}{550 \mathrm{nm}}-\frac{1}{
 Normalized Difference Water Index|NDWI |$\frac{R_{860} – R_{1240}}{R_{860} + R_{1240}}$    | MIPAS | Water 
 Moisture Stress Index|MSI |$\frac{R_{1600}}{R_{820}}$     | LandsatTM|Water 
 Normalized Difference Infrared Index|NDII | $\frac{850 n m-1650 n m}{850 n m+1650 n m}$ | ALI|Water 
-
+The North Atlantic Oscillation |(NAO)|  | ALI|temperature and precipitation
 
 
 
